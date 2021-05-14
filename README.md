@@ -24,6 +24,13 @@
 
 ## Description
 
+## Docker
+
+```bash
+docker build -t mynest .  
+
+```
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
