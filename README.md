@@ -27,8 +27,22 @@
 ## Docker
 
 ```bash
+# test in local the dockerfile
 docker build -t mynest .  
 
+docker run \
+   -it \
+  --rm \
+  --env-file ./.env \
+  -p 3000:3000 \
+  mynest 
+
+# test the k8s manifests & delete
+kaf deploy
+k port-forward svc/my-service 8555:80 
+curl http://localhost:8555/
+k delete deployments.apps nest-deployment 
+k delete svc my-service
 ```
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
